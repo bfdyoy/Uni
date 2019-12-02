@@ -80,6 +80,11 @@ void useDynamicArray()
 	{
 		array[i] = (i % 2 == 0 ? *ptr1 : *ptr2);
 	}
+	
+	delete ptr1;
+	ptr1 = nullptr;
+	delete ptr2;
+	ptr2 = nullptr;
 
 	ptr1 = array;
 	ptr2 = array + arraySize;
@@ -92,11 +97,6 @@ void useDynamicArray()
 	}
 	std::cout << "\n";
 	current = nullptr;
-	delete current;
-	ptr1 = nullptr;
-	delete ptr1;
-	ptr2 = nullptr;
-	delete ptr2;
 	delete[]array;
 	array = nullptr;
 }
