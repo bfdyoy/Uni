@@ -18,16 +18,19 @@ LIBS += D:\OpenCV\openvc_built\install\x64\vc16\lib\opencv_calib3d411.lib
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    blur.cpp \
     crop.cpp \
     main.cpp \
     mainwindow.cpp \
-    resize.cpp
+    resize.cpp \
+    rotate.cpp
 
 HEADERS += \
+    blur.h \
     crop.h \
-    dragndrop.h \
     mainwindow.h \
-    resize.h
+    resize.h \
+    rotate.h
 
 FORMS += \
     mainwindow.ui
