@@ -19,18 +19,24 @@ LIBS += D:\OpenCV\openvc_built\install\x64\vc16\lib\opencv_calib3d411.lib
 
 SOURCES += \
     blur.cpp \
+    channel.cpp \
+    color.cpp \
     crop.cpp \
     main.cpp \
     mainwindow.cpp \
     resize.cpp \
-    rotate.cpp
+    rotate.cpp \
+    sharpen.cpp
 
 HEADERS += \
     blur.h \
+    channel.h \
+    color.h \
     crop.h \
     mainwindow.h \
     resize.h \
-    rotate.h
+    rotate.h \
+    sharpen.h
 
 FORMS += \
     mainwindow.ui

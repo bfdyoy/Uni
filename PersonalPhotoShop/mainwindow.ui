@@ -35,7 +35,7 @@
     <item row="0" column="1">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="pageDrag">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -519,8 +519,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>179</width>
-                <height>247</height>
+                <width>138</width>
+                <height>196</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_12">
@@ -620,8 +620,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>188</width>
-                <height>247</height>
+                <width>319</width>
+                <height>196</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_15">
@@ -903,7 +903,7 @@
      <x>0</x>
      <y>0</y>
      <width>400</width>
-     <height>24</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

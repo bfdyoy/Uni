@@ -25,6 +25,8 @@ void Blur::kernelChanged(int value)
 
 void Blur::bluring()
 {
+    // kernel = matrix used to create blur/sharpening/ebrossing
+    // edge detection etc.
     switch (type) {
     case Blur::box:
         cv::blur(src, dst, Size(kernel,kernel));
