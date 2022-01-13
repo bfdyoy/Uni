@@ -4,22 +4,15 @@
 #include <QMainWindow>
 #include <QFileDialog>
 
-#include <QMimeData>
-#include <QDropEvent>
-#include <QCloseEvent>
-#include <QMessageBox>
-#include <QDragEnterEvent>
-
-#include <opencv2/core/core.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/highgui/highgui.hpp>
-
 #include "blur.h"
+#include "sharpen.h"
+#include "channel.h"
+#include "cvtcolor.h"
+#include "color.h"
+#include "special.h"
 #include "resize.h"
 #include "rotate.h"
 #include "crop.h"
-
-using namespace cv;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -33,30 +26,47 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void newBlur();
+    void newSharpen();
+    void newChannel();
+    void newCvtColor();
+    void newColor();
+    void newSpecial();
     void newResize();
     void newRotate();
     void newCrop();
-    void newBlur();
-
-signals:
-    void cleanBlur();
-    void cleanResize();
-    void cleanRotate();
-    void cleanCrop();
 
 private:
     Ui::MainWindow *ui;
     Mat image;
-    Mat pastImg;
+    Blur *blur;
+    Sharpen *sharpen;
+    Channel *channel;
+    CvtColor *cvt;
+    Color *color;
+    Special *special;
     Resize *size;
     Rotate *rotate;
     Crop *crop;
-    Blur *blur;
+    Mat pastImg;
+
+signals:
+    void cleanBlur();
+    void cleanChannel();
+    void cleanSharpen();
+    void cleanCvtColor();
+    void cleanColor();
+    void cleanSpecial();
+    void cleanResize();
+    void cleanRotate();
+    void cleanCrop();
+
 private slots:
     void fileProcess();
     void switchPages();
     void accept();
     void reject();
+
 protected:
     void dropEvent(QDropEvent*);
     void closeEvent(QCloseEvent*);

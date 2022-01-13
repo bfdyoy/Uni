@@ -22,21 +22,26 @@ SOURCES += \
     channel.cpp \
     color.cpp \
     crop.cpp \
+    cvtcolor.cpp \
     main.cpp \
     mainwindow.cpp \
     resize.cpp \
     rotate.cpp \
-    sharpen.cpp
+    sharpen.cpp \
+    special.cpp
 
 HEADERS += \
     blur.h \
     channel.h \
     color.h \
     crop.h \
+    cvtcolor.h \
+    event.h \
     mainwindow.h \
     resize.h \
     rotate.h \
-    sharpen.h
+    sharpen.h \
+    special.h
 
 FORMS += \
     mainwindow.ui
