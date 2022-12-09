@@ -11,7 +11,9 @@
 #include <QVector3D>
 #include <random>
 
-enum FractalType {
+// naming the fractal types
+// several fractals are treated
+enum class FractalType {
     MANDELBROT,
     PSYCHOFRACTAL,
     ANOTHERFRACTAL,
@@ -20,18 +22,24 @@ enum FractalType {
     NEWNEWFRACTAL
 };
 
-enum ColorType {
+// naming the color types
+//only fractal's color and the background can be changed
+enum class ColorType {
     FRACTAL,
     AMBIENCE
 };
 
 class FractalData {
 public:
+    // constants
     static const QVector3D baseCamera;
-    static constexpr const qreal defaultZoom = -3.0;
-    static constexpr const qreal defaultSpeed = 0.25;
+    static constexpr const qreal defaultZoom = -3.0; // default values for the zoom
+    static constexpr const qreal defaultSpeed = 0.25; // default values for the speed
 
-    qreal a{}, b{}, c{};
+    // other useful variables
+    qreal a{};
+    qreal b{};
+    qreal c{};
     quint8 n = 2;
     FractalType type{};
     QColor fractalColor = QColor(55, 255, 55);
@@ -42,7 +50,7 @@ public:
     qreal absoluteSpeed = defaultSpeed;
     bool isRotating = false;
 
-
+    // default constructor
     FractalData();
 
     [[maybe_unused]] FractalData(qreal a, qreal b, qreal c, quint8 n, FractalType type);
@@ -53,7 +61,7 @@ public:
 
     void setAbsoluteSpeed(qreal absoluteSpeed);
 
-
+    // generate a random number
     void genRandom();
 };
 

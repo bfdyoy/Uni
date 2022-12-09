@@ -33,14 +33,18 @@ float plane(vec3 point) {
 	return point.y;
 }
 
+// add two imaginary numbers
 vec4 Add(vec4 z1, vec4 z2) {
 	return z1 + z2;
 }
 
+// multiply two imaginary numbers
 vec4 Mul(vec4 z1, vec4 z2) {
 	return vec4(z1.x * z2.x - dot(z1.yzw, z2.yzw), z2.x * z1.yzw + z1.x * z2.yzw + cross(z1.yzw, z2.yzw));
 }
 
+
+// calculate z to the power of n
 vec4 Pow(vec4 z, int n) {
 	vec4 z0 = vec4(1.0, vec3(0.0));
 	for(int i = 0; i < n; i++)

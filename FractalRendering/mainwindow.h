@@ -34,8 +34,10 @@ class MainWindow : public QMainWindow {
     static const qint64 LIMIT = 180000;
 
 public:
+    // explicit constructor
     explicit MainWindow(QWidget *parent = nullptr);
 
+    // destructor
     ~MainWindow() override;
 
 private:
@@ -51,25 +53,23 @@ private:
 
     void connectBoxBar();
 
-    void makeMenu();
+    void makeMenu(); // create the menu
 
-    void chooseColor(QColor const &color, ColorType type);
+    void chooseColor(QColor const &color, ColorType type); // when choose a color is choosen
 
     void askColor(ColorType type);
 
-    void updateButtons();
+    void updateButtons(); // update buttons states
 
-    void readAndDraw();
+    void readAndDraw(); // read new data and redraw
 
-    void setValues();
+    void setValues(); // set new data for the values
 
-    void recordClickAction();
+    void generateRandom(); // generate random data
 
-    void generateRandom();
+    void hideAndShow(); // hide and show window
 
-    void hideAndShow();
-
-    void hideBorders();
+    void hideBorders(); // hide the borders of the window
 
 protected:
     void keyPressEvent(QKeyEvent *event) override;

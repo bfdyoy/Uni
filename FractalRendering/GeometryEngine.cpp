@@ -81,7 +81,7 @@ void GeometryEngine::initGeometry() {
     indexBuf.allocate(indices, 34 * sizeof(GLushort));
 }
 
-void GeometryEngine::drawGeometry(QOpenGLShaderProgram *program) {
+void GeometryEngine::drawGeometry([[maybe_unused]] const QOpenGLShaderProgram *program) {
     // Tell OpenGL which VBOs to use
     arrayBuf.bind();
     indexBuf.bind();

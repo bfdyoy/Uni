@@ -24,19 +24,21 @@ class FractalWidget : public QOpenGLWidget, protected QOpenGLFunctions {
 public:
     using QOpenGLWidget::QOpenGLWidget;
 
+    // destructor
     ~FractalWidget();
 
+    // set the data for a fractal
     void setFractalData(FractalData *data);
 
 protected:
     // For zoom-in and zoom-out on wheel scrolled
-    void wheelEvent(QWheelEvent *e) override;
+    void wheelEvent(QWheelEvent *e) override; // wheel event handler
 
-    void mousePressEvent(QMouseEvent *e) override;
+    void mousePressEvent(QMouseEvent *e) override; // mouse pressed event handler
 
-    void mouseMoveEvent(QMouseEvent *e) override;
+    void mouseMoveEvent(QMouseEvent *e) override; // mouse move event handler
 
-    void mouseReleaseEvent(QMouseEvent *) override;
+    void mouseReleaseEvent(QMouseEvent *) override; // mouse release event handler
 
     void initializeGL() override;
 
@@ -44,11 +46,11 @@ protected:
 
     void paintGL() override;
 
-    void initShaders();
+    void initShaders(); // initialise the shaders
 
-    void rotateFractal(QVector2D const &diff);
+    void rotateFractal(QVector2D const &diff); // rotate the fractal
 
-    void autoRotate();
+    void autoRotate(); // handle the auto rotation
 
 private:
     bool mousePressed = false;

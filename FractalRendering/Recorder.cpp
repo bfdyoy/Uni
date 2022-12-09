@@ -17,7 +17,7 @@ void Recorder::stop() {
     if(!running)
         return;
     {
-        std::unique_lock<std::mutex> lock(queueMutex);
+        std::unique_lock lock(queueMutex);
         running = false;
         queueCondition.notify_all();
     }
@@ -25,14 +25,14 @@ void Recorder::stop() {
 }
 
 void Recorder::push_back(std::pair<QImage, QString> &&data) {
-    std::unique_lock<std::mutex> lock(queueMutex);
+    std::unique_lock lock(queueMutex);
     queue.emplace(std::move(data));
     queueCondition.notify_all();
 }
 
 void Recorder::run() {
     while(running || !queue.empty()) {
-        std::unique_lock<std::mutex> lock(queueMutex);
+        std::unique_lock lock(queueMutex);
         queueCondition.wait(lock, [this] { return !queue.empty() || !running; });
         if(!running && instantStop)
             break;

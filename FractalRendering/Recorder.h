@@ -15,21 +15,23 @@ public:
         kInstantStop,
         kWaitProcessing
     };
+    // explicit constructor
+    explicit Recorder(Mode mode);
 
-    Recorder(Mode mode);
-
+    // virtual destructor
     virtual ~Recorder() noexcept;
 
+    // start recording
     void start();
 
+    // stop recording
     void stop();
 
-    void push_back(std::pair<QImage, QString> &&data);
+    void push_back(std::pair<QImage, QString> &&data); // lock and move the data
 
 private:
     void run();
 
-private:
     const bool instantStop;
     std::atomic_bool running = false;
     std::thread worker;

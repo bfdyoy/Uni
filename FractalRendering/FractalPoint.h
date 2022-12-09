@@ -6,23 +6,26 @@
 
 class FractalPoint {
 private:
-    qreal x, y;
+    qreal x;
+    qreal y;
     QColor color;
 
 public:
-    FractalPoint(qreal newX, qreal newY, QColor newColor);
+    // constructor
+    FractalPoint(qreal newX, qreal newY, const QColor& newColor);
+
+    // getters
+    [[nodiscard]] qreal getX() const;
+    [[nodiscard]] qreal getY() const;
 
     [[nodiscard]] QColor getColor() const;
 
-    void setColor(QColor newColor);
-
-    [[nodiscard]] qreal getX() const;
-
-    [[nodiscard]] qreal getY() const;
-
+    // setters
     void setX(qreal newX) &;
-
     void setY(qreal newY) &;
+  
+    // set a new color
+    void setColor(const QColor& newColor);
 };
 
 

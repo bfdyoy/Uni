@@ -465,7 +465,7 @@
   <customwidget>
    <class>FractalWidget</class>
    <extends>QWidget</extends>
-   <header>FractalWidget.hpp</header>
+   <header>FractalWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -7,14 +7,16 @@
 
 class GeometryEngine : protected QOpenGLFunctions {
 public:
+    // constructor
     GeometryEngine();
 
+    // virtual destructor
     virtual ~GeometryEngine();
 
-    void drawGeometry(QOpenGLShaderProgram *program);
+    void drawGeometry(const QOpenGLShaderProgram *program); // draw the geometry
 
 private:
-    void initGeometry();
+    void initGeometry(); // initilise the geometry
 
     QOpenGLBuffer arrayBuf;
     QOpenGLBuffer indexBuf;
